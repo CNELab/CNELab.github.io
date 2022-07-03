@@ -38,21 +38,13 @@
               <li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
                 <a class="nav-link" href="{{ '/blog/' | relative_url }}">blog
                   {%- if page.title == "blog" -%}
-                  <span class="sr-only"></span>
+                  <span class="sr-only">(current)</span>
                   {%- endif -%}
                 </a>
               </li>
               {%- endif %}
 
-               <!-- CV -->
-              <li class="nav-item active">
-	              <a class="nav-link" href="{{ '/assets/pdf/CV.pdf' | prepend: site.baseurl | prepend: site.url }}">CV
-                <span class="sr-only">(current)</span>
-                </a>
-              </li>
-                <!-- Other pages -->
-              <!--
-
+              <!-- Other pages -->
               {%- assign sorted_pages = site.pages | sort: "title" -%}
               {%- for p in sorted_pages -%}
               {%- if p.nav and p.autogen == nil -%}
@@ -81,13 +73,9 @@
                   {%- endif -%}
                 </a>
               </li>
-
               {%- endif -%}
               {%- endif -%}
               {% endfor -%}
-
-            --> 
-
               {%- if site.enable_darkmode %}
 
               <!-- Toogle theme mode -->
